@@ -8,11 +8,15 @@
 
     <style> 
         .container{
-            background-color:#D50032
+            background-color:#D50032;
         }
         
         .container-fluid{
-            background-color: #001E62
+            background-color: #001E62;
+        }
+        
+        .text-white{
+            color:white; 
         }
     </style>    
 </head>
@@ -24,11 +28,28 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     
-    <div class="container">
-        <p>This is a test</p>
+    <div class="container text-white">
+        <p>Fixed Width</p>
     </div>
-    <div class="container-fluid">
-        
+    <div class="container-fluid text-white">
+        <p>Flexible Width</p>
+    </div>
+    <div class="container">
+    <div class="row">
+        <div class="col">
+            column 1
+        </div>
+        <div class= "col">
+            column 2 
+        </div>
+        <div class="col">
+            column3
+        </div>
+        <div class="col">
+            column 4
+        </div>
+    </div>
+       
     </div>
 </body>
 </html>
