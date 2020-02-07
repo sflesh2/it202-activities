@@ -1,10 +1,30 @@
-<!doctype html>
+ <!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
 </head>
 <body>
-  
+    
+  <script>
+      console.log("This is a test");
+      var url = "https://data.cityofchicago.org/resource/xzkq-xp2w.json?$limit=5";      
+      
+    fetch(url)
+	.then((response) =>{
+		return response.json(); 
+	})
+	.then((json) => {
+		for(let data in json){
+            //console.log(json[data]);
+            let para = document.createElement("p");
+            para.textContent = json[data].name; 
+            
+            document.querySelector("body").appendChild(para);
+        } 
+        
+	}); 
+	
+  </script>
 </body>
 </html>
