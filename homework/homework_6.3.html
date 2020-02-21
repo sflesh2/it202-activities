@@ -5,7 +5,70 @@
     <title>Document</title>
 </head>
 <body>
-  
+  <canvas id="my-canvas" width="400" height="400">
+             Error Displaying Canvas
+        </canvas>
+        <script>
+            
+           
+            
+            //change the color of the canvas to red
+            document.getElementById("my-canvas").style.backgroundColor = "red";
+            
+            const demoCanvas = document.getElementById('my-canvas').getContext("2d");
+            
+            function writeUIN(){
+                demoCanvas.beginPath(); 
+                demoCanvas.lineWidth = .5; 
+                demoCanvas.strokeStyle = "#000000";
+                demoCanvas.strokeText("651999976", 10, 250);    
+                demoCanvas.closePath();
+            }
+            
+            function drawLetter(){
+                 demoCanvas.beginPath(); 
+                demoCanvas.lineWidth = 10; 
+                demoCanvas.strokeStyle = "#0000FF";
+                demoCanvas.moveTo(50,10); 
+                demoCanvas.lineTo(10, 10);
+                demoCanvas.lineTo(10,50); 
+                demoCanvas.lineTo(50,50); 
+                demoCanvas.lineTo(50,100); 
+                demoCanvas.lineTo(10,100); 
+                demoCanvas.stroke();
+                 demoCanvas.closePath();
+                
+            }
+            
+            function triangle(x, y){
+                 demoCanvas.beginPath(); 
+                demoCanvas.strokeStyle = "#008000";
+                demoCanvas.moveTo(x,y);   //150 150
+                demoCanvas.lineTo(x+50, y+50);  //200 200 
+                demoCanvas.lineTo(x, y+50);  //150 200
+                demoCanvas.lineTo(x,y);   //150 150
+                demoCanvas.fill();
+                demoCanvas.stroke();
+                 demoCanvas.closePath();
+            }
+            
+            
+            window.onload = function() {// make sure to use onload
+                drawLetter();
+                
+                //draw a few triangles across the screen 
+                for(let i = 10; i <= 500 ; i+=100){
+                    triangle(i, 150);    
+                }
+                
+                writeUIN();
+                
+                
+            }
+            
+           
+    
+        </script>
 </body>
 
 </html>
