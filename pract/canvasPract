@@ -1,0 +1,30 @@
+
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+  <canvas id="my-canvas" width="400" height="400">
+             Error Displaying Canvas
+  </canvas>
+    
+  <script>
+    let dogImg = new Image(); 
+      dogImg.src = //the source; 
+      let c = document.querySelector("canvas"); 
+      let ctx = c.getContext("2d");
+      
+      //this draws the image of the dog onto the screen 
+      ctx.drawImage(dogImg, 0,0);
+      
+      //note for the collision detection: 
+      //the imae starts from the top left. for collision detection make a hitbox 
+  </script>
+        
+</body>
+
+</html>
