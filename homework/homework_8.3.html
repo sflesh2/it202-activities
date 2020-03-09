@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Shopping list example</title>
+    <style>
+      li {
+        margin-bottom: 10px;
+      }
+
+      li button {
+        font-size: 8px;
+        margin-left: 20px;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+
+    <h1>My shopping list</h1>
+
+    <div class="template">
+    <li class="listItem">
+            This is a test
+            
+    </li>
+        
+    <button class="removeButton" onclick="remove(this)">
+                delete
+            </button>
+    </div>
+    
+    
+    <div>
+      <label for="item">Enter a new item:</label>
+      <input type="text" name="item" id="item">
+      <button id="enterData">Add item</button>
+    </div>
+
+    <ul class="shoppingList">
+        
+    
+    </ul>
+
+    <script>
+       //hide the template code
+       document.querySelector(".template").style.display = "none";
+       
+       let uList = document.querySelector("ul");
+       let text = document.querySelector("#item");
+       let tListItem = document.querySelector(".listItem");
+       let tButton = document.querySelector(".removeButton");
+      
+       remove = e=>{
+           //note: e is a reference ot hte calling node.
+           let deleteItem = e.parentNode; 
+           deleteItem.parentNode.removeChild(deleteItem);
+       }
+       
+       //get the new data from the text field and create a new element
+       addItem = e=>{  
+           let item = tListItem.cloneNode(true); 
+           item.textContent = text.value; 
+           
+           item.appendChild(tButton.cloneNode(true));
+           uList.appendChild(item);
+           text.value ="";
+           text.focus();
+       }
+        
+        document.querySelector("button#enterData").onclick= addItem;
+    </script>
+  </body>
+</html>
